@@ -11,12 +11,12 @@ st.set_page_config(
 )
 
 # Contact email for full access
-CONTACT_EMAIL = "luca.hagenmayer@student.unisg.ch"
+CONTACT_EMAIL = "luca@eatomics.com"
 
 # Chapter definitions with metadata
 CHAPTERS = [
-    {"id": "01", "title": "01. Computing Basics", "emoji": "🖥️", "description": "Bits, Logik-Gatter, CPU – Die Grundlagen der Informatik", "available": True},
-    {"id": "02", "title": "02. Python Basics", "emoji": "🐍", "description": "Variablen, Typen, I/O – Dein erster Python-Code", "available": False},
+    {"id": "01", "title": "01. Computing Basics", "emoji": "🖥️", "description": "Bits, Logik-Gatter, CPU – Die Grundlagen der Informatik", "available": False},
+    {"id": "02", "title": "02. Python Basics", "emoji": "🐍", "description": "Variablen, Typen, I/O – Dein erster Python-Code", "available": True},
     {"id": "03", "title": "03. Kontrollstrukturen & Funktionen", "emoji": "🔄", "description": "Schleifen, Listen, Tuples – Algorithmen in Aktion", "available": False},
     {"id": "04", "title": "04. Datenstrukturen", "emoji": "📦", "description": "Rekursion, Dicts, Sets – Effiziente Datenverwaltung", "available": False},
     {"id": "05", "title": "05. Objektorientierte Programmierung", "emoji": "🏗️", "description": "Klassen, Vererbung – Code wie ein Profi strukturieren", "available": False},
@@ -31,10 +31,27 @@ CHAPTERS = [
 
 # Mock Exams
 MOCK_EXAMS = [
-    {"id": "mock1", "title": "📝 Mock Exam 1", "description": "Vollständige Prüfungssimulation mit 25 Fragen", "available": False},
-    {"id": "mock2", "title": "📝 Mock Exam 2", "description": "Zweite Prüfungssimulation mit 32 Fragen", "available": False},
+    {"id": "mock1", "title": "📝 Mock Exam 1", "description": "5 Beispielfragen mit ausführlichen Erklärungen", "available": "partial"},
+    {"id": "mock2", "title": "📝 Mock Exam 2", "description": "32 weitere Fragen mit detaillierten Lösungswegen", "available": False},
 ]
 
+# Actual tab structure from each chapter for accurate preview
+CHAPTER_TABS = {
+    "01": ["🎓 Was ist Informatik?", "💡 Bits & Bytes", "🔢 Zahlensysteme", "🧠 Logik", "🔌 Transistoren", "➕ Addierer", "⚙️ CPU", "💻 Übungen", "📝 Quiz"],
+    "02": ["🐍 Warum Python?", "📦 Variablen", "📥 Datentypen", "➕ Arithmetik", "🎤 I/O", "❓ If-Else", "🔁 Schleifen", "🎲 Zufall", "💻 Übungen", "📝 Quiz"],
+    "03": ["🔁 Kontrollstrukturen", "📎 Funktionen", "📋 Listen", "📦 Tuples", "✂️ Slicing", "🔢 Sequenz-Ops", "💻 Übungen", "📝 Quiz"],
+    "04": ["🔄 Rekursion", "λ Lambda", "📝 Comprehensions", "⚙️ Generatoren", "🔑 Dictionaries", "🎯 Sets", "📚 Stacks", "🗺️ map/filter", "🌐 Web-Apps", "💻 Übungen", "📝 Quiz"],
+    "05": ["🤔 Warum OOP?", "🏗️ Klassen", "⚙️ self", "🔧 __init__", "🔒 Properties", "🧬 Vererbung", "🎭 Polymorphismus", "🔐 Encapsulation", "💻 Übungen", "📝 Quiz"],
+    "06": ["📊 Data Science", "🔢 NumPy Arrays", "🌱 Pandas Series", "📋 DataFrames", "🎯 Boolean Masking", "📊 Datenanalyse", "💻 Übungen", "📝 Quiz"],
+    "07": ["🔧 Data Wrangling", "🔗 Merging (Joins)", "📊 GroupBy", "📝 apply()", "🌱 Visualisierung", "🎨 Chart Types", "💻 Übungen", "📝 Quiz"],
+    "08": ["🗄 Datenbanken", "📐 ER-Modell", "📊 Normalisierung", "💾 SQL Basics", "📊 GROUP BY", "🔗 JOINs", "✏ DML", "🐍 sqlite3", "💻 Übungen", "📝 Quiz"],
+    "09": ["🌐 Netzwerk-Basics", "📶 OSI Stack", "🔌 IP & Routing", "🛰️ TCP vs UDP", "🌍 HTTP", "📛 DNS", "🐍 APIs", "💻 Übungen", "📝 Quiz"],
+    "10": ["🤖 Paradigmenwechsel", "📈 KI Geschichte", "📉 Loss", "⬇ Gradient Descent", "✂️ Train/Val/Test", "⚖ Bias-Variance", "🔄 Cross-Validation", "🎯 k-NN", "💻 Übungen", "📝 Quiz"],
+    "11": ["🎯 Logistic Regression", "🔲 Confusion Matrix", "📊 Precision/Recall", "📈 ROC & AUC", "⚖ Class Imbalance", "🎯 Multi-Class", "💻 Übungen", "📝 Quiz"],
+    "12": ["💻 Computing Basics", "🐍 Python Basics", "🔁 Control Flow", "📦 Data Structures", "🏗 OOP", "📊 Data Science", "🤖 ML"],
+    "mock1": ["🖥️ Computing (Q1-7)", "🗄️ Databases (Q8-13)", "📊 Data Science (Q14-19)", "🤖 ML & Networks (Q20-25)"],
+    "mock2": ["🖥️ Computing (Q1-8)", "🗄️ Databases (Q9-16)", "📊 Data Science (Q17-24)", "🤖 ML & Networks (Q25-32)"],
+}
 
 def show_cta_banner():
     """Display prominent call-to-action banner for full access"""
@@ -58,14 +75,17 @@ def show_cta_banner():
             border-radius: 8px;
             font-weight: bold;
         ">
-            ✉️ Schreibe eine Mail an: <a href="mailto:luca.hagenmayer@student.unisg.ch" style="color: #667eea;">luca.hagenmayer@student.unisg.ch</a>
+            ✉️ Schreibe eine Mail an: <a href="mailto:luca@eatomics.com" style="color: #667eea;">luca@eatomics.com</a>
         </div>
     </div>
     """, unsafe_allow_html=True)
 
 
 def show_locked_chapter(chapter):
-    """Display a locked chapter placeholder with preview"""
+    """Display a locked chapter placeholder with preview of actual tabs"""
+    chapter_id = chapter.get('id', '')
+    tabs_list = CHAPTER_TABS.get(chapter_id, [])
+    
     st.markdown(f"""
     <div style="
         background: linear-gradient(145deg, #f5f7fa 0%, #e4e8f0 100%);
@@ -86,19 +106,67 @@ def show_locked_chapter(chapter):
     </div>
     """, unsafe_allow_html=True)
     
+    # Show actual tabs as preview
+    if tabs_list:
+        st.markdown("### 📑 In diesem Kapitel enthalten:")
+        # Create clean tab preview without excessive lock emojis
+        tabs_preview = " | ".join(tabs_list)
+        st.markdown(f"""
+        <div style="
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+            overflow-x: auto;
+        ">
+            <span style="color: #6c757d; font-size: 0.9rem;">{tabs_preview}</span>
+        </div>
+        """, unsafe_allow_html=True)
+        st.caption(f"**{len(tabs_list)} interaktive Tabs** mit Theorie, Übungen und Quiz")
+    
     show_cta_banner()
 
 
 def show_home():
     """Display home page with overview"""
-    st.title("🎓 Lernapp Demo – Computer Science")
     
+    # Hero section
     st.markdown("""
-    ### Willkommen zur Demo!
+    <div style="
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        padding: 3rem 2rem;
+        border-radius: 20px;
+        text-align: center;
+        margin-bottom: 2rem;
+        box-shadow: 0 20px 60px rgba(102, 126, 234, 0.4);
+    ">
+        <h1 style="color: white; font-size: 2.5rem; margin-bottom: 0.5rem;">
+            🎓 Lernapp Demo – Computer Science
+        </h1>
+        <p style="color: rgba(255,255,255,0.95); font-size: 1.3rem; margin-bottom: 1.5rem;">
+            Von Python-Basics bis Machine Learning – alles was du für die Prüfung brauchst
+        </p>
+        <div style="
+            display: inline-flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        ">
+            <span style="background: rgba(255,255,255,0.2); padding: 0.5rem 1rem; border-radius: 20px; color: white;">
+                ✅ Interaktive Beispiele
+            </span>
+            <span style="background: rgba(255,255,255,0.2); padding: 0.5rem 1rem; border-radius: 20px; color: white;">
+                ✅ Ausführliche Erklärungen
+            </span>
+            <span style="background: rgba(255,255,255,0.2); padding: 0.5rem 1rem; border-radius: 20px; color: white;">
+                ✅ Echte Prüfungsfragen
+            </span>
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
     
-    Dies ist eine **Vorschau** der vollständigen Lernapp für Computer Science & Machine Learning.
-    In der Vollversion erhältst du Zugang zu:
-    """)
+    st.markdown("### 📦 Was ist in der Vollversion enthalten?")
     
     # Feature overview
     col1, col2, col3 = st.columns(3)
@@ -106,29 +174,39 @@ def show_home():
     with col1:
         st.markdown("""
         <div style="text-align: center; padding: 1.5rem; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 12px; color: white;">
-            <div style="font-size: 2rem;">📚</div>
-            <h4>12 Kapitel</h4>
-            <p style="font-size: 0.9rem; opacity: 0.9;">Von Bits bis Machine Learning</p>
+            <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">📚</div>
+            <h4 style="margin: 0.5rem 0;">12 Kapitel</h4>
+            <p style="font-size: 0.9rem; opacity: 0.9; margin: 0;">Von Bits bis Machine Learning</p>
         </div>
         """, unsafe_allow_html=True)
     
     with col2:
         st.markdown("""
         <div style="text-align: center; padding: 1.5rem; background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%); border-radius: 12px; color: white;">
-            <div style="font-size: 2rem;">📝</div>
-            <h4>2 Mock Exams</h4>
-            <p style="font-size: 0.9rem; opacity: 0.9;">Realistische Prüfungssimulation</p>
+            <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">📝</div>
+            <h4 style="margin: 0.5rem 0;">2 Mock Exams</h4>
+            <p style="font-size: 0.9rem; opacity: 0.9; margin: 0;">57 echte Prüfungsfragen</p>
         </div>
         """, unsafe_allow_html=True)
     
     with col3:
         st.markdown("""
         <div style="text-align: center; padding: 1.5rem; background: linear-gradient(135deg, #fc4a1a 0%, #f7b733 100%); border-radius: 12px; color: white;">
-            <div style="font-size: 2rem;">🎮</div>
-            <h4>Interaktive Übungen</h4>
-            <p style="font-size: 0.9rem; opacity: 0.9;">Lernen durch Experimentieren</p>
+            <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🎮</div>
+            <h4 style="margin: 0.5rem 0;">Interaktive Übungen</h4>
+            <p style="font-size: 0.9rem; opacity: 0.9; margin: 0;">Lernen durch Experimentieren</p>
         </div>
         """, unsafe_allow_html=True)
+    
+    st.markdown("<br>", unsafe_allow_html=True)
+    
+    # What's in demo
+    st.success("""
+    **🎁 In dieser Demo kannst du testen:**
+    - 🐍 **Python Basics** – Vollständiges Kapitel mit allen Tabs, Übungen und Quiz
+    - 📝 **Mock Exam 1 Sample** – 5 echte Prüfungsfragen mit ausführlichen Erklärungen
+    - 📖 **Quick Reference** – Computing Basics Zusammenfassung
+    """)
     
     st.markdown("<br>", unsafe_allow_html=True)
     
@@ -138,21 +216,23 @@ def show_home():
     st.markdown("""
     | # | Thema | Status |
     |---|-------|--------|
-    | 01 | Computing Basics (Bits, Logik, CPU) | ✅ **In Demo verfügbar** |
-    | 02 | Python Basics | 🔒 Vollversion |
-    | 03 | Kontrollstrukturen & Funktionen | 🔒 Vollversion |
-    | 04 | Datenstrukturen | 🔒 Vollversion |
-    | 05 | Objektorientierte Programmierung | 🔒 Vollversion |
-    | 06 | Data Science 1: NumPy & Pandas | 🔒 Vollversion |
-    | 07 | Data Science 2: Wrangling & Viz | 🔒 Vollversion |
-    | 08 | Datenbanken & SQL | 🔒 Vollversion |
-    | 09 | Netzwerke & APIs | 🔒 Vollversion |
-    | 10 | Von Statistik zu ML | 🔒 Vollversion |
-    | 11 | Klassifikation | 🔒 Vollversion |
-    | 12 | Quick Reference | 🔒 Vollversion |
+    | 01 | Computing Basics (Bits, Logik, CPU) | Vollversion |
+    | 02 | Python Basics | ✅ **In Demo verfügbar** |
+    | 03 | Kontrollstrukturen & Funktionen | Vollversion |
+    | 04 | Datenstrukturen | Vollversion |
+    | 05 | Objektorientierte Programmierung | Vollversion |
+    | 06 | Data Science 1: NumPy & Pandas | Vollversion |
+    | 07 | Data Science 2: Wrangling & Viz | Vollversion |
+    | 08 | Datenbanken & SQL | Vollversion |
+    | 09 | Netzwerke & APIs | Vollversion |
+    | 10 | Von Statistik zu ML | Vollversion |
+    | 11 | Klassifikation | Vollversion |
+    | 12 | Quick Reference | 🔓 Teilweise verfügbar |
+    | 📝 | Mock Exam 1 | 🔓 **5 Fragen in Demo** |
+    | 📝 | Mock Exam 2 | Vollversion |
     """)
     
-    st.info("👆 **Tipp:** Wähle 'Kapitel 01' in der Sidebar, um die Demo zu starten!")
+    st.info("👆 **Tipp:** Wähle 'Python Basics' in der Sidebar, um die Demo zu starten!")
     
     show_cta_banner()
 
@@ -166,13 +246,22 @@ def main():
     
     # Add chapters
     for ch in CHAPTERS:
-        status = "✅" if ch["available"] else "🔒"
+        if ch["available"] == True:
+            status = "✅"
+        elif ch["available"] == "partial":
+            status = "🔓"
+        else:
+            status = "🔒"
         menu_options.append(f"{status} {ch['title']}")
     
     # Add mock exams
-    st.sidebar.markdown("---")
     for exam in MOCK_EXAMS:
-        status = "🔒"
+        if exam["available"] == True:
+            status = "✅"
+        elif exam["available"] == "partial":
+            status = "🔓"
+        else:
+            status = "🔒"
         menu_options.append(f"{status} {exam['title']}")
     
     selected = st.sidebar.radio("Wähle ein Kapitel:", menu_options, label_visibility="collapsed")
@@ -195,10 +284,18 @@ def main():
     # Route to selected page
     if selected == "🏠 Home":
         show_home()
-    elif "01. Computing Basics" in selected:
+    elif "02. Python Basics" in selected:
         # Import and run the available chapter
-        from chapters import computing_basics
-        computing_basics.run()
+        from chapters import python_basics
+        python_basics.run()
+    elif "12. Quick Reference" in selected:
+        # Import and run the partial Quick Reference chapter
+        from chapters import quick_reference
+        quick_reference.run()
+    elif "Mock Exam 1" in selected:
+        # Import and run the demo mock exam
+        from chapters import mock1
+        mock1.run()
     else:
         # Find the chapter/exam info
         for ch in CHAPTERS:

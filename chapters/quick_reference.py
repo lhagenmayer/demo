@@ -25,7 +25,7 @@ def show_cta_banner():
             border-radius: 8px;
             font-weight: bold;
         ">
-            ✉️ Schreibe eine Mail an: <a href="mailto:luca.hagenmayer@student.unisg.ch" style="color: #667eea;">luca.hagenmayer@student.unisg.ch</a>
+            ✉️ Schreibe eine Mail an: <a href="mailto:luca@eatomics.com" style="color: #667eea;">luca@eatomics.com</a>
         </div>
     </div>
     """, unsafe_allow_html=True)
