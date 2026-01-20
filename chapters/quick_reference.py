@@ -31,6 +31,28 @@ def show_cta_banner():
     """, unsafe_allow_html=True)
 
 
+def show_locked_tab():
+    """Display locked tab message"""
+    st.markdown("""
+    <div style="
+        background: linear-gradient(145deg, #f5f7fa 0%, #e4e8f0 100%);
+        border: 2px dashed #ccc;
+        border-radius: 16px;
+        padding: 3rem;
+        text-align: center;
+        margin-top: 1rem;
+    ">
+        <div style="font-size: 4rem; margin-bottom: 1rem;">🔒</div>
+        <h3 style="color: #555;">Dieser Tab ist in der Demo nicht verfügbar</h3>
+        <p style="color: #777;">
+            Die Vollversion enthält Quick References für alle Themen.
+        </p>
+    </div>
+    """, unsafe_allow_html=True)
+    
+    show_cta_banner()
+
+
 def run():
     st.header("12. Quick Reference - Demo Vorschau")
     
@@ -39,14 +61,23 @@ def run():
     In dieser Demo ist nur der **Computing Basics** Tab verfügbar.
     """)
     
+    # Match all tabs from the main version
     tabs = st.tabs([
         "💻 Computing Basics ✅", 
         "🐍 Python Basics 🔒", 
         "🔁 Control & Functions 🔒", 
         "📦 Data Structures 🔒", 
         "🏗 OOP 🔒", 
-        "📊 Data Science 🔒", 
-        "🤖 ML 🔒"
+        "📊 Data Science 1 🔒", 
+        "📊 Data Science 2 🔒", 
+        "💾 SQL & Databases 🔒", 
+        "🌐 Networks & APIs 🔒", 
+        "🤖 ML Fundamentals 🔒", 
+        "🎯 ML Classification 🔒",
+        "📁 File I/O & Modules 🔒",
+        "⚡ Advanced Python 🔒",
+        "📐 Formeln & Konzepte 🔒",
+        "🧠 Mental Models 🔒"
     ])
     
     # --- TAB 1: Computing Basics (Available in Demo) ---
@@ -155,27 +186,10 @@ def run():
         
         st.success("✅ **Merksatz:** Dezimal für Menschen (10 Finger), Binär für Maschinen (An/Aus).")
     
-    # --- LOCKED TABS ---
-    for i in range(1, 7):
+    # --- LOCKED TABS (all remaining 14 tabs) ---
+    for i in range(1, 15):
         with tabs[i]:
-            st.markdown("""
-            <div style="
-                background: linear-gradient(145deg, #f5f7fa 0%, #e4e8f0 100%);
-                border: 2px dashed #ccc;
-                border-radius: 16px;
-                padding: 3rem;
-                text-align: center;
-                margin-top: 1rem;
-            ">
-                <div style="font-size: 4rem; margin-bottom: 1rem;">🔒</div>
-                <h3 style="color: #555;">Dieser Tab ist in der Demo nicht verfügbar</h3>
-                <p style="color: #777;">
-                    Die Vollversion enthält Quick References für alle Themen.
-                </p>
-            </div>
-            """, unsafe_allow_html=True)
-            
-            show_cta_banner()
+            show_locked_tab()
 
 
 if __name__ == "__main__":

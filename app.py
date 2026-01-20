@@ -48,7 +48,7 @@ CHAPTER_TABS = {
     "09": ["🌐 Netzwerk-Basics", "📶 OSI Stack", "🔌 IP & Routing", "🛰️ TCP vs UDP", "🌍 HTTP", "📛 DNS", "🐍 APIs", "💻 Übungen", "📝 Quiz"],
     "10": ["🤖 Paradigmenwechsel", "📈 KI Geschichte", "📉 Loss", "⬇ Gradient Descent", "✂️ Train/Val/Test", "⚖ Bias-Variance", "🔄 Cross-Validation", "🎯 k-NN", "💻 Übungen", "📝 Quiz"],
     "11": ["🎯 Logistic Regression", "🔲 Confusion Matrix", "📊 Precision/Recall", "📈 ROC & AUC", "⚖ Class Imbalance", "🎯 Multi-Class", "💻 Übungen", "📝 Quiz"],
-    "12": ["💻 Computing Basics", "🐍 Python Basics", "🔁 Control Flow", "📦 Data Structures", "🏗 OOP", "📊 Data Science", "🤖 ML"],
+    "12": ["💻 Computing Basics", "🐍 Python Basics", "🔁 Control & Functions", "📦 Data Structures", "🏗 OOP", "📊 Data Science 1", "📊 Data Science 2", "💾 SQL & Databases", "🌐 Networks & APIs", "🤖 ML Fundamentals", "🎯 ML Classification", "📁 File I/O", "⚡ Advanced Python", "📐 Formeln", "🧠 Mental Models"],
     "mock1": ["🖥️ Computing (Q1-7)", "🗄️ Databases (Q8-13)", "📊 Data Science (Q14-19)", "🤖 ML & Networks (Q20-25)"],
     "mock2": ["🖥️ Computing (Q1-8)", "🗄️ Databases (Q9-16)", "📊 Data Science (Q17-24)", "🤖 ML & Networks (Q25-32)"],
 }
